@@ -1,0 +1,98 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+body {
+    background: #eee;
+    font-family: 'helvetica'
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1040px;
+    min-width: 350px;
+    width: 100%;
+    margin: 0 auto
+}
+
+input[name="search-input"] {
+    width: 350px;
+    padding: 15px 35px;
+    border: 2px solid #ddd;
+    margin-top: 15px;
+}
+
+.results-wrap {
+    width: 350px;
+    background: #fff;
+    border: 2px solid #ddd;
+    padding: 10px 35px;
+    margin-top: 10px
+}
+
+.results {
+    padding: 0;
+}
+
+.a_beer {
+    cursor: pointer;
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.saved-beers-header h3 {
+    display: inline;
+}
+
+#delete-all {
+    float: right;
+    text-decoration: underline;
+    display: inline;
+    cursor: pointer;
+}
+
+.saved-beers-header {
+    width: 350px;
+    margin-top: 15px
+}
+
+.saved-beers-header:after {
+    clear: both;
+
+}
+
+/* ----------------- BUTTON STYLES ----------------- */
+.del-btn {
+    border: 2px solid #888;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgba(255,188,119,1) 0%, rgba(255,178,72,1) 100%);
+    display: flex;
+    padding: 8px 10px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+    flex-flow: inherit;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px
+}
+
+.del-btn:after {
+    content: '\2715';
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    height: 65px;
+    width: 65px;
+    display: flex;
+    margin-left: 5px;
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+}
