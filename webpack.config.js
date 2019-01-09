@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = { 
     entry: [
         './src/index.js',
-        './src/main.css'
+        './src/main.scss'
     ],
     mode: 'development',
     output: {
@@ -28,15 +28,8 @@ module.exports = {
 
         },
         {
-            test: /\.css$/,
-            use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].css'
-                    }
-                }
-            ]
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader']
         }
         ]
     }

@@ -64,8 +64,10 @@ const delay = (callback, ms) => {
 }
 
 const saveABeer = ($savedBeer) => {
-    const $savedBeersWrap = document.querySelector('.saved-beers-wrap');
-    $savedBeersWrap.set
+    const $savedBeersMain = document.querySelector('.saved-beers-main');
+    const $savedBeerWrap = document.createElement('div');
+    $savedBeerWrap.setAttribute('class', 'saved-beer-wrap')
+
     const $hr = document.createElement('hr')
     const $time = document.createElement('time')
     const date = new Date();
@@ -73,10 +75,11 @@ const saveABeer = ($savedBeer) => {
     const $delete = document.createElement('span');
     $delete.innerHTML = '&#10005;'
 
-    $savedBeersWrap.appendChild($savedBeer);
-    $savedBeersWrap.appendChild($time);
-    $savedBeersWrap.appendChild($delete);
-    $savedBeersWrap.appendChild($hr);
+    $savedBeerWrap.appendChild($savedBeer);
+    $savedBeerWrap.appendChild($time);
+    $savedBeerWrap.appendChild($delete);
+    $savedBeerWrap.appendChild($hr);
+    $savedBeersMain.appendChild($savedBeerWrap);
 }
 
 const deleteABeer = (e) => {
