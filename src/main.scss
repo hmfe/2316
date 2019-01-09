@@ -47,28 +47,22 @@ input[name="search-input"] {
     padding: 5px 0;
 }
 
-#delete-all {
-    float: right;
-    text-decoration: underline;
-    display: inline;
-    cursor: pointer;
-}
 
 .saved-beers-header {
     width: 350px;
-    margin-top: 15px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 
-    h3 {
-        display: inline;
-    }
-
-    &:after {
-        clear: both;
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 12px;
     }
 }
 
 .saved-beer-wrap {    
-
 
     li {
         font-weight: bold
@@ -86,6 +80,11 @@ input[name="search-input"] {
             clear: both;
         }
     }
+}
+
+hr {
+    margin: 5px 0;
+    border-top: 1px solid #c5c5c5;
 }
 
 

@@ -70,9 +70,7 @@ const saveABeer = ($savedBeer) => {
     $savedBeerWrap.setAttribute('class', 'saved-beer-wrap')
 
     const $hr = document.createElement('hr')
-    const $time = document.createElement('time')
-    const date = new Date();
-    $time.innerHTML = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}, ${date.getHours()}:${date.getMinutes()}`;
+    const $time = getTime();
     const $delete = document.createElement('span');
     $delete.setAttribute('data', 'delete-a-beer')
     $delete.innerHTML = '&#10005;'
@@ -87,7 +85,6 @@ const saveABeer = ($savedBeer) => {
 }
 
 const deleteABeer = (e) => {
-    console.log(e.currentTarget.parentNode)
     e.currentTarget.parentNode.remove()
 }
 
@@ -102,3 +99,29 @@ const deleteAll = () => {
         }
     }
 } 
+
+const getTime = () => {
+    const time = document.createElement('time')
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const hour = date.getHours();
+    let minutes = date.getMinutes();
+
+    if(minutes.toString().length === 1){
+        minutes = '0' + minutes;
+    }
+
+    if(day.toString().length <= 9){
+        day = '0' + day;
+    }
+
+    if(month.toString().length <= 9){
+        month = '0' + month;
+    }
+
+    time.innerHTML = `${year}-${month}-${day}, ${hour}:${minutes}`;
+
+    return time;
+}
