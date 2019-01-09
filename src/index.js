@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const $deleteAll = document.querySelector('#delete-all');
     $deleteAll.addEventListener('click', deleteAll);
+    
 });
 
 window.addEventListener('click', (e) => {
@@ -73,6 +74,7 @@ const saveABeer = ($savedBeer) => {
     const date = new Date();
     $time.innerHTML = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}, ${date.getHours()}:${date.getMinutes()}`;
     const $delete = document.createElement('span');
+    $delete.setAttribute('data', 'delete-a-beer')
     $delete.innerHTML = '&#10005;'
 
     $savedBeerWrap.appendChild($savedBeer);
@@ -80,20 +82,23 @@ const saveABeer = ($savedBeer) => {
     $savedBeerWrap.appendChild($delete);
     $savedBeerWrap.appendChild($hr);
     $savedBeersMain.appendChild($savedBeerWrap);
+
+    $delete.addEventListener('click', deleteABeer);
 }
 
 const deleteABeer = (e) => {
-
+    console.log(e.currentTarget.parentNode)
+    e.currentTarget.parentNode.remove()
 }
 
 const deleteAll = () => {
-    if(document.querySelector('.saved-beers-wrap').children[0] === undefined){
+    if(document.querySelector('.saved-beers-main').children[0] === undefined){
         alert('Nothing to delete :)')
     } else {
         const confirmed = confirm('Are you sure you want to delete your saved beers?');
 
         if(confirmed) {
-            document.querySelector('.saved-beers-wrap').innerHTML = '';
+            document.querySelector('.saved-beers-main').innerHTML = '';
         }
     }
 } 

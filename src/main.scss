@@ -80,6 +80,7 @@ input[name="search-input"] {
 
     span {
         float: right;
+        cursor: pointer;
 
         &:after {
             clear: both;
