@@ -63,3 +63,20 @@ done.
 When done, push your branch and let us know it’s done by making a pull request.
 
 **Good Luck and have fun!**
+
+
+
+# Project Specific Details for Louis Jones' fork
+
+## Project Requirements
+
+- Node
+- NPM
+
+## How to run
+
+To run this project execture the following :
+
+- Run `npm install`
+- Run `npm start`
+- Open `http://localhost:3000` in a browser
