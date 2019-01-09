@@ -121,7 +121,7 @@ const getTime = () => {
         month = '0' + month;
     }
 
-    time.innerHTML = `${year}-${month}-${day}, ${hour}:${minutes}`;
+    time = `${year}-${month}-${day}, ${hour}:${minutes}`;
 
     return time;
 }
