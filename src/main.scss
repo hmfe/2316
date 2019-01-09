@@ -47,9 +47,12 @@ input[name="search-input"] {
     padding: 5px 0;
 }
 
+.saved-beers-parent {
+    width: 350px;
+}
+
 
 .saved-beers-header {
-    width: 350px;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -89,7 +92,7 @@ hr {
 
 
 /* ----------------- BUTTON STYLES ----------------- */
-.del-btn {
+.task-1-del-btn {
     border: 2px solid #888;
     font-weight: bold;
     background: linear-gradient(90deg, rgba(255,188,119,1) 0%, rgba(255,178,72,1) 100%);
@@ -100,9 +103,7 @@ hr {
     cursor: pointer;
     flex-flow: inherit;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
+    margin: 30px auto;
 
     &:after {
         content: '\2715';
